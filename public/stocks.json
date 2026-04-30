@@ -1,0 +1,7 @@
+[
+  { "id": "1", "symbol": "AAPL", "price": 150.25 },
+  { "id": "2", "symbol": "GOOGL", "price": 2800.50 },
+  { "id": "3", "symbol": "MSFT", "price": 299.99 },
+  { "id": "4", "symbol": "AMZN", "price": 3450.00 },
+  { "id": "5", "symbol": "TSLA", "price": 700.10 }
+]
