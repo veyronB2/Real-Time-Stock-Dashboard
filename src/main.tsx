@@ -1,14 +1,18 @@
+import './index.css'
+
+import App from './App.tsx'
+import ErrorBoundary from './ErrorBoundry.tsx';
+import { Provider } from 'react-redux'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
-import './index.css'
-import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </Provider>
   </StrictMode>,
 )
