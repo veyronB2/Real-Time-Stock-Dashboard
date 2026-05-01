@@ -1,7 +1,7 @@
 import { ColDef, GridOptions } from "ag-grid-community";
+import { getNoOverlayNoRowsTemplate, getRowStyles } from "./utils";
 
 import { currencyFormatter } from "../helpers";
-import { getNoOverlayNoRowsTemplate } from "./utils";
 
 export interface RowData {
     id: string;
@@ -27,6 +27,7 @@ export const gridOptions: GridOptions = {
     paginationPageSize: 5,
     suppressCellFocus: true,
     paginationPageSizeSelector: [5, 10, 15],
+    getRowStyle: getRowStyles,
     defaultColDef: {
         flex: 1,
         resizable: false,
