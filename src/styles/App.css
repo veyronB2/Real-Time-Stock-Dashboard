@@ -1,3 +1,13 @@
+:root {
+    --dashboard-border-color: rgba(115, 141, 174, 0.2);
+    --dashboard-surface-start: rgba(255, 255, 255, 0.9);
+    --dashboard-surface-end: rgba(244, 249, 255, 0.94);
+    --dashboard-shadow-color: rgba(33, 60, 93, 0.09);
+    --dashboard-eyebrow-color: #215a7a;
+    --dashboard-eyebrow-background: rgba(145, 209, 228, 0.22);
+    --dashboard-title-color: #10233d;
+}
+
 #root {
     width: 100%;
     min-height: 100vh;
@@ -14,11 +24,11 @@
 .dashboard-container {
     margin-bottom: 1.75rem;
     padding: 2rem;
-    border: 1px solid rgba(115, 141, 174, 0.2);
+    border: 1px solid var(--dashboard-border-color);
     border-radius: 1.75rem;
     text-align: left;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(244, 249, 255, 0.94));
-    box-shadow: 0 20px 45px rgba(33, 60, 93, 0.09);
+    background: linear-gradient(135deg, var(--dashboard-surface-start), var(--dashboard-surface-end));
+    box-shadow: 0 20px 45px var(--dashboard-shadow-color);
     backdrop-filter: blur(14px);
 }
 
@@ -31,13 +41,13 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color:#215a7a;
-    background: rgba(145, 209, 228, 0.22);
+    color: var(--dashboard-eyebrow-color);
+    background: var(--dashboard-eyebrow-background);
 }
 
 .dashboard-container h1 {
     margin: 0;
-    color: #10233d;
+    color: var(--dashboard-title-color);
     margin-bottom: 2rem;
 }
 

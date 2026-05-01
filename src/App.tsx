@@ -27,9 +27,9 @@ function App() {
   return (
       <motion.div 
         className='main-wrapper' 
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeIn' }}
+        initial={{ opacity: 0, scale: 0.82, filter: 'blur(18px)' }}
+        animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       >
         <div className="dashboard-container">
           <div className="dashboard-header-eyebrow">Market Overview</div>
