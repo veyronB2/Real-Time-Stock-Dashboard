@@ -5,7 +5,6 @@ interface GetNoOverlayNoRowsTemplateProps {
     customMessage?: string;
 }
 
-//TODO: unit test
 export const getNoOverlayNoRowsTemplate = ( { entity, customMessage }: GetNoOverlayNoRowsTemplateProps) => {
     const message = customMessage ? customMessage : `There are no ${entity} available.`;
     return `<span class=ag-overlay-no-rows-center>${message}</span>`;

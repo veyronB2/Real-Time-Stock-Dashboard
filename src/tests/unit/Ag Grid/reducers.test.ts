@@ -1,6 +1,6 @@
-import stockReducer, { fetchStock } from '../../redux/reducers/stockReducer';
+import stockReducer, { fetchStock } from '../../../redux/reducers/stockReducer';
 
-import type { Stock } from '../../services/mockStockService';
+import type { Stock } from '../../../services/mockStockService';
 
 describe('stockReducer', () => {
 	it('sets loading to true when the request starts', () => {
