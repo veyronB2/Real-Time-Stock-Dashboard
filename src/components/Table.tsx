@@ -4,20 +4,8 @@ import { ColDef, ColGroupDef, DefaultMenuItem, MenuItemDef, themeQuartz } from "
 
 import { getMenuItems } from "../utils/agGrid/utils";
 
-const colours = {
-    "primaryLight": "rgba(42,111,219,1)",
-    "primaryMid": "rgba(18,44,145,1)",
-    "primaryDark": "rgba(29,44,103,1)",
-    "secondaryLight": "rgba(129,233,230,1)",
-    "secondaryMid": "rgba(72,214,210,1)",
-    "secondaryDark": "rgba(58,172,168,1)",
-    "neutralMid": "rgba(241,244,253,1)",
-    "neutralLight": "rgba(250, 251, 254, 1)",
-    "neutralDark": "rgba(210,220,249,1)",
-}
-
 const rowBorder = {
-    color: colours.neutralDark, width: 1
+    color: "var(--color-neutral-dark)", width: 1
 };
 
 const colBorder = {
@@ -29,7 +17,7 @@ const theme = themeQuartz
         backgroundColor: "#FFFFFF",
         browserColorScheme: "light",
         foregroundColor: "#000000",
-        headerBackgroundColor: colours.neutralDark,
+        headerBackgroundColor: "var(--color-neutral-dark)",
         rowHeight: 64,
         headerHeight: 64,
         rowBorder,
