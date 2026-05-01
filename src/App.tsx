@@ -1,18 +1,42 @@
-import './App.css';
+import './styles/index.css';
+
+import { columnDefs, gridOptions } from './utils/agGrid/config';
+import { useEffect, useRef } from 'react';
+
+import { AgGridReact } from 'ag-grid-react';
+import { AllEnterpriseModule } from 'ag-grid-enterprise';
+import Header from './components/Header';
+import { ModuleRegistry } from "ag-grid-community";
+import { RootState } from './store/store';
+import Table from './components/Table';
+import { fetchStock } from './redux/reducers/stockReducer';
+import { useAppDispatch } from './redux/hooks';
+import { useSelector } from 'react-redux';
+
+ModuleRegistry.registerModules([AllEnterpriseModule]);
 
 function App() {
+  const { stocks, isLoading } = useSelector((state: RootState) => state.app.stockManagement)
+  const dispatch = useAppDispatch();
+  const gridRef = useRef<AgGridReact>(null);
+
+  useEffect(() => {
+    dispatch(fetchStock()) 
+  }, [dispatch]);
+
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <header>
-        <h1>Stock Dashboard Exercise</h1>
-        <p>
-          Welcome to the Real-Time Stock Dashboard take-home exercise!
-        </p>
-        <p>
-          Please check the README.md for complete instructions on what to build.
-        </p>
-      </header>
-    </div>
+      <div className='main-wrapper'>
+        <Header/>
+        <Table
+            testId="tasks-table"
+            gridRef={gridRef}
+            rowData={stocks ?? []}
+            columnDefs={columnDefs}
+            gridOptions={gridOptions}
+            loading={isLoading}
+            pagination={true}
+        />
+      </div>
   );
 }
 

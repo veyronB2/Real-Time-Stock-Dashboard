@@ -1,7 +1,7 @@
-import './index.css'
+import './styles/index.css'
 
 import App from './App.tsx'
-import ErrorBoundary from './ErrorBoundry.tsx';
+import ErrorBoundary from './ErrorBoundary.tsx';
 import { Provider } from 'react-redux'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'

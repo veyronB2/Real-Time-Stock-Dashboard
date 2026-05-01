@@ -19,13 +19,16 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
     render() {
         if (this.state.error) {
-            return <div>
-                <p>
-                    Please <a href="/">refresh</a> to <a href="/">reload the application</a> and try again.
+            return (
+            <div>
+                <p style={{fontSize: "2rem"}}>
+                    Please <a href="/">refresh</a> to reload the application and try again.
                 </p>
-                <small>If you continue to experience problems please contact support.</small>
+                <small style={{fontSize: "1rem"}}>If you continue to experience problems please contact support.</small>
             </div>
+            )
         }
+    
 
         return this.props.children;
     }

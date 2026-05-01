@@ -1,0 +1,14 @@
+#root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-wrapper {
+    padding: 2rem;
+    font-family: 'sans-serif';
+    padding: 2rem;
+    text-align: center;
+    width: 50rem;
+}
+

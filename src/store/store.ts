@@ -1,9 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
+import stockReducer from '../redux/reducers/stockReducer'
+
+const appReducer = combineReducers({
+  stockManagement: stockReducer,
+});
 
 export const store = configureStore({
   reducer: {
-    // Add your reducers here
-    app: (state = {}) => state,
+    app: appReducer,
   },
 });
 
