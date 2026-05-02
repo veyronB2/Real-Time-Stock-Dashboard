@@ -4,11 +4,11 @@ import { render, screen } from '@testing-library/react';
 import App from '../../App';
 import { Provider } from 'react-redux';
 import { act } from 'react';
-import { fetchData } from '../../utils/helpers';
+import { fetchData } from '../../shared/lib/http';
 import stockReducer from '../../redux/reducers/stockReducer';
 
-jest.mock('../../utils/helpers', () => {
-  const actualHelpers = jest.requireActual('../../utils/helpers');
+jest.mock('../../shared/lib/http', () => {
+  const actualHelpers = jest.requireActual('../../shared/lib/http');
 
   return {
     ...actualHelpers,
@@ -41,7 +41,7 @@ const renderApp = () => {
   );
 };
 
-describe('App Component', () => {
+describe('Dashboard Component', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockedFetchData.mockResolvedValue(mockStocks);
@@ -54,8 +54,12 @@ describe('App Component', () => {
     jest.useRealTimers();
   });
 
-  it('renders the generic exercise heading', () => {
+  it('renders dashboards header', () => {
     expect(screen.getByText(/Stock Dashboard/i)).toBeInTheDocument();
+  });
+
+  it('renders dashboards eyebrow', () => {
+    expect(screen.getByText(/Market Overview/i)).toBeInTheDocument();
   });
 
   it("renders the grid container", () => {

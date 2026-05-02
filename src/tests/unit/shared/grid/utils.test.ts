@@ -4,7 +4,7 @@ import {
     defaultMainMenuItems,
     getMenuItems,
     getNoOverlayNoRowsTemplate,
-} from "../../../utils/agGrid/utils";
+} from "../../../../shared/grid/utils";
 
 describe("Testing getNoOverlayNoRowsTemplate", () => {
     it("It should return correct message", () => {

@@ -2,7 +2,7 @@ import { AgGridReact, AgGridReactProps } from "ag-grid-react";
 import { CSSProperties, RefObject, useImperativeHandle, useMemo, useRef } from "react";
 import { ColDef, ColGroupDef, DefaultMenuItem, MenuItemDef, themeQuartz } from "ag-grid-enterprise";
 
-import { getMenuItems } from "../utils/agGrid/utils";
+import { getMenuItems } from "../../shared/grid/utils";
 
 const rowBorder = {
     color: "var(--color-neutral-dark)", width: 1

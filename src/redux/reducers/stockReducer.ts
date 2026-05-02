@@ -1,7 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { Stock } from "../../services/mockStockService";
-import { fetchData } from "../../utils/helpers";
+import { fetchData } from "../../shared/lib/http";
 
 interface StockState {
     stocks: Stock[];

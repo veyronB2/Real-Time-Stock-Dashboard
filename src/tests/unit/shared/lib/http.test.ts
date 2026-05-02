@@ -1,7 +1,9 @@
-import { currencyFormatter, fetchData } from '../../utils/helpers';
 
-import { Stock } from '../../services/mockStockService';
+
+
 import axios from 'axios';
+import { Stock } from '../../../../services/mockStockService';
+import { fetchData } from '../../../../shared/lib/http';
 
 jest.mock('axios');
 
@@ -35,17 +37,5 @@ describe('fetchData', () => {
 		mockedAxios.mockRejectedValueOnce(error);
 
 		await expect(fetchData('/api/stocks')).rejects.toThrow('Network error');
-	});
-});
-
-describe('currencyFormatter', () => {
-	it('should return value with correctly mapped currency', () => {
-		expect(currencyFormatter(150.25, 'AAPL')).toBe('$150.25');
-		expect(currencyFormatter(299.99, 'MSFT')).toBe('£299.99');
-	});
-
-	it('should return default currency for unknown symbols', () => {
-		expect(currencyFormatter(78.56, 'GOGL')).toBe('$78.56');
-		expect(currencyFormatter(700.1)).toBe('$700.10');
 	});
 });

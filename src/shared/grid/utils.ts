@@ -24,5 +24,3 @@ export const getRowStyles = (params: RowClassParams) => {
     }
 }
 
-
-
