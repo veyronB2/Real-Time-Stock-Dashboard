@@ -1,6 +1,7 @@
 import { ColDef, GridOptions } from "ag-grid-community";
-import { currencyFormatter } from "../shared/formatters/currency";
 import { getNoOverlayNoRowsTemplate, getRowStyles } from "../shared/grid/utils";
+
+import { currencyFormatter } from "../shared/formatters/currency";
 
 export interface RowData {
     id: string;
@@ -24,7 +25,7 @@ export const columnDefs: ColDef<RowData>[] = [
 
 export const gridOptions: GridOptions = {
     overlayNoRowsTemplate: getNoOverlayNoRowsTemplate({ entity: "stocks" }),
-    domLayout: "normal",
+    domLayout: "autoHeight",
     paginationPageSize: 5,
     suppressCellFocus: true,
     paginationPageSizeSelector: [5, 10, 15],
