@@ -72,3 +72,39 @@
     }
 }
 
+.number {
+    text-align: center;
+}
+
+.center-header .ag-header-cell-label {
+    justify-content: center;
+}
+
+.stock-price-cell .ag-cell-wrapper {
+    justify-content: center;
+}
+
+.stock-price-cell .ag-cell-value {
+    width: 100%;
+}
+
+.stock-price-cell .ag-cell-value > span {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+.stock-price-cell .ag-value-change-delta {
+    position: absolute;
+    right: 50%;
+    transform: translateX(-2.5rem);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.stock-price-cell .ag-value-change-value {
+    white-space: nowrap;
+}
+
+

@@ -11,10 +11,12 @@ export interface RowData {
 
 export const columnDefs: ColDef<RowData>[] = [
     { field: "id", hide: true},
-    { field: "symbol" },
+    { field: "symbol",cellClass: "number"},
     { 
         field: "price",  
+        cellClass: ["number", "stock-price-cell"],
         filter: 'agNumberColumnFilter',
+        cellRenderer: 'agAnimateShowChangeCellRenderer',
         valueFormatter: ({ value, data }) => typeof value === "number"
             ? currencyFormatter(value, data?.symbol)
             : "", 
@@ -27,10 +29,12 @@ export const gridOptions: GridOptions = {
     paginationPageSize: 5,
     suppressCellFocus: true,
     paginationPageSizeSelector: [5, 10, 15],
+    getRowId: params => params.data.id,
     getRowStyle: getRowStyles,
     defaultColDef: {
         flex: 1,
         resizable: false,
+        headerClass: "center-header",
         filter: "agTextColumnFilter",
         filterParams: { buttons: ["reset"] }
     },

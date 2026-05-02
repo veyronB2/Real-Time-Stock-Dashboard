@@ -1,7 +1,7 @@
 import './styles/index.css';
 
 import { columnDefs, gridOptions } from './utils/agGrid/config';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { AgGridReact } from 'ag-grid-react';
 import { AllEnterpriseModule } from 'ag-grid-enterprise';
@@ -10,6 +10,7 @@ import { RootState } from './store/store';
 import Table from './components/Table';
 import { fetchStock } from './redux/reducers/stockReducer';
 import { motion } from 'motion/react';
+import { subscribeToStockUpdates } from './services/mockStockService';
 import { useAppDispatch } from './redux/hooks';
 import { useSelector } from 'react-redux';
 
@@ -19,10 +20,29 @@ function App() {
   const { stocks, isLoading } = useSelector((state: RootState) => state.app.stockManagement)
   const dispatch = useAppDispatch();
   const gridRef = useRef<AgGridReact>(null);
+  const [isGridReady, setIsGridReady] = useState(false);
 
   useEffect(() => {
     dispatch(fetchStock()) 
   }, [dispatch]);
+
+  useEffect(() => {
+    if (!isGridReady || stocks.length === 0) {
+      return;
+    }
+
+    const unsubscribe = subscribeToStockUpdates((updatedStock) => {
+      gridRef.current?.api.applyTransactionAsync({
+        update: [updatedStock],
+      });
+    });
+
+    return unsubscribe;
+  }, [isGridReady, stocks]);
+
+  const onGridReady = () => {
+    setIsGridReady(true)
+  }
 
   return (
       <motion.div 
@@ -41,6 +61,7 @@ function App() {
             columnDefs={columnDefs}
             gridOptions={gridOptions}
             loading={isLoading}
+            onGridReady={onGridReady}
             pagination={true}
         />
         </div>
