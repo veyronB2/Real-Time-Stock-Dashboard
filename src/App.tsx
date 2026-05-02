@@ -1,9 +1,8 @@
 import './styles/index.css';
 
 import { AllEnterpriseModule } from 'ag-grid-enterprise';
-import { ModuleRegistry } from "ag-grid-community";
-
 import Dashboard from './components/Dashboard';
+import { ModuleRegistry } from "ag-grid-community";
 
 ModuleRegistry.registerModules([AllEnterpriseModule]);
 
