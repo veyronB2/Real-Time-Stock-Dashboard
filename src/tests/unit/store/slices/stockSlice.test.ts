@@ -1,10 +1,10 @@
-import stockReducer, { fetchStock } from '../../../redux/reducers/stockReducer';
+import stockSlice, { fetchStock } from '../../../../store/slices/stockSlice';
 
-import type { Stock } from '../../../services/mockStockService';
+import type { Stock } from '../../../../services/mockStockService';
 
-describe('stockReducer', () => {
+describe('stockSlice', () => {
 	it('sets loading to true when the request starts', () => {
-		const nextState = stockReducer(
+		const nextState = stockSlice(
 			undefined,
 			fetchStock.pending('request-1', undefined),
 		);
@@ -22,7 +22,7 @@ describe('stockReducer', () => {
 			{ id: '2', symbol: 'GOGL', price: 78.56 },
 		];
 
-		const nextState = stockReducer(
+		const nextState = stockSlice(
 			undefined,
 			fetchStock.fulfilled(stocks, 'request-1', undefined),
 		);
@@ -41,7 +41,7 @@ describe('stockReducer', () => {
 			error: null,
 		};
 
-		const nextState = stockReducer(
+		const nextState = stockSlice(
 			loadingState,
 			fetchStock.rejected(null, 'request-1', undefined, 'Network error'),
 		);

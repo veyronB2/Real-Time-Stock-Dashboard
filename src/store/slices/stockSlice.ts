@@ -26,7 +26,7 @@ export const fetchStock = createAsyncThunk("stock/requestStatus", async (_, { re
     }
 });
 
-const stockReducer = createSlice({
+const stockSlice = createSlice({
     name: "stockManagement",
     initialState,
     reducers: {},
@@ -46,4 +46,4 @@ const stockReducer = createSlice({
     }
 })
 
-export default stockReducer.reducer;
+export default stockSlice.reducer;

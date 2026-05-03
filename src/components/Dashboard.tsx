@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import { RootState } from '../store/store';
 import Table from './shared/Table';
-import { fetchStock } from '../redux/reducers/stockReducer';
+import { fetchStock } from '../store/slices/stockSlice';
 import { motion } from 'motion/react';
 import { subscribeToStockUpdates } from '../services/mockStockService';
-import { useAppDispatch } from '../redux/hooks';
+import { useAppDispatch } from '../store/hooks';
 import { useSelector } from 'react-redux';
 
 const Dashboard = () => {

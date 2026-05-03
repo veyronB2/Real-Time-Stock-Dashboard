@@ -5,7 +5,7 @@ import App from '../../App';
 import { Provider } from 'react-redux';
 import { act } from 'react';
 import { fetchData } from '../../shared/lib/http';
-import stockReducer from '../../redux/reducers/stockReducer';
+import stockSlice from '../../store/slices/stockSlice';
 
 jest.mock('../../shared/lib/http', () => {
   const actualHelpers = jest.requireActual('../../shared/lib/http');
@@ -29,7 +29,7 @@ const renderApp = () => {
   const testStore = configureStore({
     reducer: {
       app: combineReducers({
-        stockManagement: stockReducer,
+        stockManagement: stockSlice,
       }),
     },
   });

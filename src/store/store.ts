@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import stockReducer from '../redux/reducers/stockReducer'
+import stockSlice from './slices/stockSlice'
 
 const appReducer = combineReducers({
-  stockManagement: stockReducer,
+  stockManagement: stockSlice,
 });
 
 export const store = configureStore({
