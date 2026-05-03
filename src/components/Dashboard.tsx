@@ -1,4 +1,4 @@
-import { columnDefs, gridOptions } from '../gridConfigs/stocksConfig';
+import { columnDefs, gridOptions } from '../shared/grid/configs/stocksConfig';
 import { useEffect, useRef, useState } from 'react'
 
 import { AgGridReact } from 'ag-grid-react';

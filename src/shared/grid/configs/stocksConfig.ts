@@ -1,7 +1,7 @@
 import { ColDef, GridOptions } from "ag-grid-community";
-import { getNoOverlayNoRowsTemplate, getRowStyles } from "../shared/grid/utils";
+import { getNoOverlayNoRowsTemplate, getRowStyles } from "../utils";
 
-import { currencyFormatter } from "../shared/formatters/currency";
+import { currencyFormatter } from "../../formatters/currency";
 
 export interface RowData {
     id: string;
