@@ -13,7 +13,7 @@ export const columnDefs: ColDef<RowData>[] = [
     { field: "id", hide: true},
     { field: "symbol",cellClass: "number"},
     { 
-        field: "price",  
+        field: "price",
         cellClass: ["number", "stock-price-cell"],
         filter: 'agNumberColumnFilter',
         cellRenderer: 'agAnimateShowChangeCellRenderer',
