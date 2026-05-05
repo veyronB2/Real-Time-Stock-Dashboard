@@ -4,11 +4,11 @@ import { render, screen } from '@testing-library/react';
 import App from '../../App';
 import { Provider } from 'react-redux';
 import { act } from 'react';
-import { fetchData } from '../../shared/lib/dataFetcher';
+import { fetchData } from '../../shared/api/dataFetcher';
 import stocksReducer from './slices/stocks.slice';
 
-jest.mock('../../shared/lib/dataFetcher', () => {
-    const actualHelpers = jest.requireActual('../../shared/lib/dataFetcher');
+jest.mock('../../shared/api/dataFetcher', () => {
+    const actualHelpers = jest.requireActual('../../shared/api/dataFetcher');
 
     return {
         ...actualHelpers,
