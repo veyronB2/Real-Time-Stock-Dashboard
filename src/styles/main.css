@@ -1,4 +1,20 @@
 :root {
+  --color-primary-light: rgba(42, 111, 219, 1);
+  --color-primary-mid: rgba(18, 44, 145, 1);
+  --color-primary-dark: rgba(29, 44, 103, 1);
+  --color-secondary-light: rgba(129, 233, 230, 1);
+  --color-secondary-mid: rgba(72, 214, 210, 1);
+  --color-secondary-dark: rgba(58, 172, 168, 1);
+  --color-neutral-mid: rgba(241, 244, 253, 1);
+  --color-neutral-light: rgba(250, 251, 254, 1);
+  --color-neutral-dark: rgba(210, 220, 249, 1);
+  --dashboard-border-color: rgba(115, 141, 174, 0.2);
+  --dashboard-surface-start: rgba(255, 255, 255, 0.9);
+  --dashboard-surface-end: rgba(244, 249, 255, 0.94);
+  --dashboard-shadow-color: rgba(33, 60, 93, 0.09);
+  --dashboard-eyebrow-color: #215a7a;
+  --dashboard-eyebrow-background: rgba(145, 209, 228, 0.22);
+  --dashboard-title-color: #10233d;
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -13,6 +29,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 a {
@@ -34,4 +55,8 @@ h1 {
   h1 {
     font-size: 2.5em;
   }
+}
+
+.number {
+  text-align: center;
 }

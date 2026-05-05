@@ -1,3 +1,2 @@
 @import "./main.css";
-@import "./App.css";
-@import "./grid/stock.css";
+@import "../features/stocks/dashboard.css";
